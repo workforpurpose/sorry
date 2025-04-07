@@ -31,9 +31,13 @@
     button:hover {
       background-color: #ff1493;
     }
-    audio {
+    #audio-container {
       margin-top: 30px;
       display: none;
+      text-align: center;
+    }
+    audio {
+      display: inline-block;
     }
     .carousel-container {
       margin-top: 40px;
@@ -65,12 +69,14 @@
 
   <h1 id="question">Are you upset with me? 🥺</h1>
   <div id="buttons">
-    <button onclick="answerYes()">Yes 😔</button>
-    <button onclick="answerNo()">No 😊</button>
+    <button onclick="answerYes()">Yes</button>
+    <button onclick="answerNo()">No</button>
   </div>
-  <audio id="audio" controls></audio>
+  <div id="audio-container">
+    <audio id="audio" controls></audio>
+  </div>
 
-  <h2>Some memories... ❤️</h2>
+  <h2>Lets go for a quick recap </h2>
   <div class="carousel-container">
     <div class="carousel">
       <img src="photo1.jpg" alt="Memory 1" />
@@ -88,7 +94,6 @@
       <img src="photo13.jpg" alt="Memory 13" />
       <img src="photo14.jpg" alt="Memory 14" />
       <img src="photo15.jpg" alt="Memory 15" />
-      <img src="photo16.jpg" alt="Memory 16" />
       <img src="photo17.jpg" alt="Memory 17" />
       <img src="photo18.jpg" alt="Memory 18" />
       <img src="photo19.jpg" alt="Memory 19" />
@@ -100,22 +105,23 @@
     const question = document.getElementById('question');
     const buttons = document.getElementById('buttons');
     const audio = document.getElementById('audio');
+    const audioContainer = document.getElementById('audio-container');
     let step = 1;
 
     function playAudio(src) {
       audio.src = src;
-      audio.style.display = 'block';
+      audioContainer.style.display = 'block';
       audio.play().catch(e => console.error('Audio failed:', e));
     }
 
     function answerYes() {
       if (step === 1) {
         playAudio('song1.mp3');
-        question.innerText = 'Are you still upset? 😢';
+        question.innerText = ' Still upset?';
         step = 2;
       } else if (step === 2) {
         playAudio('song2.mp3');
-        question.innerText = 'Are you still upset from me? 🙈';
+        question.innerText = 'Are you still upset from me?';
         buttons.innerHTML = `
           <button onclick="finalForgive()">No 😌</button>
           <button onclick="finalForgive()">No ❤️</button>
@@ -126,13 +132,13 @@
 
     function answerNo() {
       playAudio('song3.mp3');
-      question.innerText = 'Yay! I love you soooo much 💖';
+      question.innerText = 'Yay! I love you soooo much!';
       buttons.style.display = 'none';
     }
 
     function finalForgive() {
       playAudio('finalsong.mp3');
-      question.innerText = 'Hehe I knew it! You love me too 💞';
+      question.innerText = 'Thanks for forgiving me! You mean everything to me. I am extremely sorry for everything, and trust me, I will make it up to you. I love you too 💞';
       buttons.style.display = 'none';
     }
   </script>
