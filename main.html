@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I'm Sorry 😢</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    button {
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ffb6c1;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ff69b4;
+      color: white;
+    }
+    audio {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="question">Are you upset with me? 🥺</h1>
+  <div id="options">
+    <button onclick="answerYes()">Yes</button>
+    <button onclick="answerNo()">No</button>
+  </div>
+  <audio id="audio" controls style="display: none;"></audio>
+
+  <script>
+    const question = document.getElementById('question');
+    const options = document.getElementById('options');
+    const audio = document.getElementById('audio');
+
+    let step = 1;
+
+    function playSong(src) {
+      audio.src = src;
+      audio.style.display = 'block';
+      audio.play();
+    }
+
+    function answerYes() {
+      if (step === 1) {
+        playSong('song1.mp3');
+        question.innerText = "Are you still upset? 😔";
+        step = 2;
+      } else if (step === 2) {
+        playSong('song2.mp3');
+        question.innerText = "Okay... I really am sorry 😢";
+        options.style.display = 'none';
+      }
+    }
+
+    function answerNo() {
+      playSong('song3.mp3');
+      question.innerText = "Yay! I love you 💖";
+      options.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
