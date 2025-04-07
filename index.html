@@ -6,195 +6,136 @@
   <title>I'm Sorry 💖</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(135deg, #ffe4e1, #ffc0cb);
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #ffe4e1;
       text-align: center;
-      overflow: hidden;
+      padding: 50px;
     }
-
-    h1 {
-      font-size: 2.5rem;
+    h1, h2 {
       color: #d63384;
+    }
+    h1 {
+      font-size: 2em;
       margin-bottom: 30px;
-      animation: pop 0.6s ease;
     }
-
-    @keyframes pop {
-      0% { transform: scale(0.5); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
     button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 20px;
       background-color: #ff69b4;
       color: white;
-      border: none;
-      padding: 15px 25px;
-      margin: 10px;
-      border-radius: 25px;
-      font-size: 16px;
       cursor: pointer;
-      transition: transform 0.2s ease, background-color 0.3s ease;
     }
-
     button:hover {
       background-color: #ff1493;
-      transform: scale(1.05);
     }
-
     audio {
-      margin-top: 20px;
+      margin-top: 30px;
+      display: none;
     }
-
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #ff69b4;
-      transform: rotate(45deg);
-      animation: floatUp 6s infinite ease-in;
-    }
-
-    .heart::before, .heart::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #ff69b4;
-      border-radius: 50%;
-    }
-
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: -10px;
-      top: 0;
-    }
-
-    @keyframes floatUp {
-      0% {
-        bottom: -50px;
-        opacity: 1;
-        transform: translateX(0) rotate(45deg);
-      }
-      100% {
-        bottom: 100vh;
-        opacity: 0;
-        transform: translateX(100px) rotate(45deg);
-      }
-    }
-
     .carousel-container {
-  margin-top: 20px;
-  overflow-x: auto;
-  white-space: nowrap;
-  width: 100%;
-  padding: 10px 0;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  scroll-behavior: smooth;
-}
-
-.carousel {
-  display: flex;
-  gap: 15px;
-  padding: 0 10px;
-}
-
-.carousel img {
-  height: 180px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.carousel img:hover {
-  transform: scale(1.08);
-}
-
+      margin-top: 40px;
+      overflow-x: auto;
+      white-space: nowrap;
+      width: 100%;
+      padding: 10px 0;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      scroll-behavior: smooth;
+    }
+    .carousel {
+      display: flex;
+      gap: 15px;
+      padding: 0 10px;
+    }
+    .carousel img {
+      height: 180px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .carousel img:hover {
+      transform: scale(1.08);
+    }
   </style>
 </head>
 <body>
+
   <h1 id="question">Are you upset with me? 🥺</h1>
-  <div id="options">
+  <div id="buttons">
     <button onclick="answerYes()">Yes 😔</button>
     <button onclick="answerNo()">No 😊</button>
   </div>
-  <audio id="audio" controls style="display: none;"></audio>
+  <audio id="audio" controls></audio>
 
-  <h2 style="color: #d63384; margin-top: 40px;">I love you babe ^_^</h2>
-<div class="carousel-container">
-  <div class="carousel">
-    <img src="photo1.jpg" alt="Memory 1" />
-    <img src="photo2.jpg" alt="Memory 2" />
-    <img src="photo3.jpg" alt="Memory 3" />
-    <img src="photo4.jpg" alt="Memory 4" />
-    <img src="photo5.jpg" alt="Memory 5" />
-    <img src="photo6.jpg" alt="Memory 6" />
-    <img src="photo7.jpg" alt="Memory 7" />
-    <img src="photo8.jpg" alt="Memory 8" />
-    <img src="photo9.jpg" alt="Memory 9" />
-    <img src="photo10.jpg" alt="Memory 10" />
-    <img src="photo11.jpg" alt="Memory 11" />
-    <img src="photo12.jpg" alt="Memory 12" />
-    <img src="photo13.jpg" alt="Memory 13" />
-    <img src="photo14.jpg" alt="Memory 14" />
-    <img src="photo15.jpg" alt="Memory 15" />
-    <img src="photo16.jpg" alt="Memory 16" />
-    <img src="photo17.jpg" alt="Memory 17" />
-    <img src="photo18.jpg" alt="Memory 18" />
-    <img src="photo19.jpg" alt="Memory 19" />
-    <img src="photo20.jpg" alt="Memory 20" />
+  <h2>Some memories... ❤️</h2>
+  <div class="carousel-container">
+    <div class="carousel">
+      <img src="photo1.jpg" alt="Memory 1" />
+      <img src="photo2.jpg" alt="Memory 2" />
+      <img src="photo3.jpg" alt="Memory 3" />
+      <img src="photo4.jpg" alt="Memory 4" />
+      <img src="photo5.jpg" alt="Memory 5" />
+      <img src="photo6.jpg" alt="Memory 6" />
+      <img src="photo7.jpg" alt="Memory 7" />
+      <img src="photo8.jpg" alt="Memory 8" />
+      <img src="photo9.jpg" alt="Memory 9" />
+      <img src="photo10.jpg" alt="Memory 10" />
+      <img src="photo11.jpg" alt="Memory 11" />
+      <img src="photo12.jpg" alt="Memory 12" />
+      <img src="photo13.jpg" alt="Memory 13" />
+      <img src="photo14.jpg" alt="Memory 14" />
+      <img src="photo15.jpg" alt="Memory 15" />
+      <img src="photo16.jpg" alt="Memory 16" />
+      <img src="photo17.jpg" alt="Memory 17" />
+      <img src="photo18.jpg" alt="Memory 18" />
+      <img src="photo19.jpg" alt="Memory 19" />
+      <img src="photo20.jpg" alt="Memory 20" />
+    </div>
   </div>
-</div>
 
   <script>
     const question = document.getElementById('question');
-    const options = document.getElementById('options');
+    const buttons = document.getElementById('buttons');
     const audio = document.getElementById('audio');
     let step = 1;
 
-    function playSong(src) {
+    function playAudio(src) {
       audio.src = src;
       audio.style.display = 'block';
-      audio.play();
+      audio.play().catch(e => console.error('Audio failed:', e));
     }
 
     function answerYes() {
       if (step === 1) {
-        playSong('song1.mp3');
-        question.innerText = "Are you still upset?";
+        playAudio('song1.mp3');
+        question.innerText = 'Are you still upset? 😢';
         step = 2;
       } else if (step === 2) {
-        playSong('song2.mp3');
-        question.innerText = "I really am sorry 💔";
-        options.style.display = 'none';
+        playAudio('song2.mp3');
+        question.innerText = 'Are you still upset from me? 🙈';
+        buttons.innerHTML = `
+          <button onclick="finalForgive()">No 😌</button>
+          <button onclick="finalForgive()">No ❤️</button>
+        `;
+        step = 3;
       }
     }
 
     function answerNo() {
-      playSong('song3.mp3');
-      question.innerText = "Yay! I love you soooo much 💖";
-      options.style.display = 'none';
+      playAudio('song3.mp3');
+      question.innerText = 'Yay! I love you soooo much 💖';
+      buttons.style.display = 'none';
     }
 
-    // Generate floating hearts
-    for (let i = 0; i < 20; i++) {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
-      document.body.appendChild(heart);
+    function finalForgive() {
+      playAudio('finalsong.mp3');
+      question.innerText = 'Hehe I knew it! You love me too 💞';
+      buttons.style.display = 'none';
     }
   </script>
+
 </body>
 </html>
